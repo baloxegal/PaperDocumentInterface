@@ -58,7 +58,7 @@ public class PaperDocument implements PaperDocumentInterface{
 	@Override
 	public PaperDocumentInterface clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
-		return (PaperDocumentInterface)super.clone();
+		return (PaperDocumentInterface) super.clone();
 	}
 	
 	
