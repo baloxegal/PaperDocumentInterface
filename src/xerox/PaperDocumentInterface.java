@@ -7,4 +7,5 @@ public interface PaperDocumentInterface {
     public String getTitle();
     public void setContent(String content);
     public String getContent();
+	PaperDocumentInterface clone() throws CloneNotSupportedException;
 }
