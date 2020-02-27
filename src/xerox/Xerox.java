@@ -5,17 +5,20 @@ import java.util.List;
 
 public class Xerox {
 
-   public PaperDocumentInterface copy(PaperDocumentInterface original) throws CloneNotSupportedException{
-      PaperDocumentInterface copy = (PaperDocumentInterface) original.clone();
+   public static PaperDocumentInterface copy(PaperDocumentInterface original) throws CloneNotSupportedException{
+      PaperDocumentInterface copy = ((PaperDocument) original).clone();
 	   return copy;
    }
-   public List<PaperDocumentInterface> copy(PaperDocumentInterface original, int quantity) throws CloneNotSupportedException{
+   public static List<PaperDocumentInterface> copy(PaperDocumentInterface original, int quantity) throws CloneNotSupportedException{
 	   List <PaperDocumentInterface> copy = new ArrayList<PaperDocumentInterface>();
 		for(int i = 0; i < quantity; i++) {
-			PaperDocumentInterface copyElement = (PaperDocumentInterface) original.clone();
-			copy.add(copyElement);
+			PaperDocumentInterface copyElements = ((PaperDocument) original).clone();
+			copy.add(copyElements);
 		}
 	   return copy;
    }
-
+   public static PaperDocumentInterface original(String type, String title, String content) {
+	   PaperDocumentInterface original = new PaperDocument(type, title, content);
+	   return original;
+   }
 }

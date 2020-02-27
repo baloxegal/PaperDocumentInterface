@@ -1,12 +1,12 @@
 package xerox;
 
-public class PaperDocument implements PaperDocumentInterface{
+public class PaperDocument implements PaperDocumentInterface, Cloneable{
 
 	String type;
 	String title;
 	String content;
 	
-	private PaperDocument(String type, String title, String content) {
+	protected PaperDocument(String type, String title, String content) {
 		super();
 		this.type = type;
 		this.title = title;
@@ -15,8 +15,7 @@ public class PaperDocument implements PaperDocumentInterface{
 
 	@Override
 	public String toString() {
-		return "PaperDocument [" + (type != null ? "type=" + type + ", " : "")
-				+ (title != null ? "title=" + title + ", " : "") + (content != null ? "content=" + content : "") + "]";
+		return "Type: " + type + "\nTitle: " + title + "\nContent:" + content;
 	}
 
 	@Override
@@ -56,11 +55,8 @@ public class PaperDocument implements PaperDocumentInterface{
 	}
 
 	@Override
-	public PaperDocumentInterface clone() throws CloneNotSupportedException {
+	protected PaperDocumentInterface clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		return (PaperDocumentInterface) super.clone();
 	}
-	
-	
-	
 }
